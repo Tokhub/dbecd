@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+
+<body>
+
+<h1 style= '"font-family:arial", "font-size:50%"' > Dataset Name: Building-Level fUlly labeled Electricity Disaggregation dataset (BLUED) </h1>
+<style>  
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+table {
+    border-spacing: 15px;
+}
+
+</style>
+
+<table style="width:100%">
+
+<tr> <td>Data characteristics</td>  <td>Multivariate time series</td>  <td>Type of building(s)</td>  <td>Residential</td> <td>Date</td> <td>2011</td> </tr>
+<tr> <td>Type of attributes</td>  <td>Integer, Real, string</td>  <td>Number of buildings</td>  <td>1</td> <td>Duration</td> <td>8 days</td> </tr>
+<tr> <td>Level of details</td>  <td>Whole house, events of appliances</td>  <td>Location of buildings </td>  <td>Pennsylvania, US</td> <td>Sample frequency</td> <td>12 kHz</td> </tr>
+
+
+</table>
+<h1>Access to the dataset </h1>
+<p>  <a href="http://http://nilm.cmubi.org/">http://nilm.cmubi.org/ </a>    </p>
+  <h1>  Data set description </h1>
+  <p> The BLUED dataset contains high frequency (12 kHz) data of raw current and voltage of the whole house and the corresponding computed active power (60 Hz). The data set also contains an event timestamps list. That is, whenever an appliance state of power consumption changes by 30 watts or more and lasts for at least 5 seconds. Number of appliances is approximately 50. And a number of 2335 events have been recorded in the dataset. Extra 2482 events from un-known sources are recorded in the dataset as well.</p>
+  
+  <h1>Dataset structure </h1>
+  <p> The BLUED includes one txt file and sixteen bzip files, namely location_001_datadictionary.txt and location001_dataset_001.bzip to 016. The data dictionary file describes codes of appliances (e.g. 129 for TV). Each of bzip files contain information for 12 hours of a day including I-V consumption data, an event list, and event lists for both phases, start and end dates and a readme file.   </p>
+<p> Attributes</p>
+<p>Date (yy/mm/dd)</p>
+<p>Time (hh:mm:ss)</p>
+<p>Current A  (in Amps)</p>
+<p>Current B  (in Amps)</p>
+<p>VoltageA    (in Volts)</p>
+<p>Active power (in watt)</p>
+<h1>Paper and citation </h1>
+<p>K. Anderson, A. Ocneanu, D. Benitez, D. Carlson, A. Rowe, and M. Berges, "Blued: a fully labeled public dataset for event-based non-intrusive load monitoring research," in Proceedings of the 2nd KDD Workshop on Data Mining Applications in Sustainability, Beijing, China, 2012, pp. 12-16.  </p>
+</body>

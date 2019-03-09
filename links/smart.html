@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+
+<body>
+
+<p><h1>Data set name:  Smart*</h1></p>
+<style>  
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+table {
+    border-spacing: 15px;
+}
+
+</style>
+<table style="width:100%">
+<tr> <td>Data characteristics</td>  <td>Multivariate time series</td>  <td>Type of building(s)</td>  <td>Residential</td> <td>Date</td> <td>2012</td> </tr>
+<tr> <td>Type of attributes</td>  <td>Real, Integer</td>  <td>Number of buildings</td>  <td>4</td> <td>Duration</td> <td>1 year</td> </tr>
+<tr> <td>Number of attributes</td>  <td>20</td>  <td>Location of buildings </td>  <td>Western Massachusetts, US,</td> <td>Sampling frequency</td> <td>1 Hz for whole power, Once in a few seconds for circuit level</td> </tr>
+
+
+</table>
+<p><h2>Access to the dataset </h2></p>
+<p> The access to the dataset is possible through the below link. To get the dataset the person is asked to fill in some information for statistical purposes. </p>
+<p>  <a href="http://traces.cs.umass.edu/index.php/Smart/Smart">http://traces.cs.umass.edu/index.php/Smart/Smart </a>    </p>
+  <p> <h1> Data set description </h1> </p>
+  <p> The Smart* data set composed of two datasets. They are UMass smart*  and UMass Smart* Microgrid .The UMass smart*  data set contains power data from three different smart homes.  The dataset includes electricity consumption and generation from wind turbine and solar panels with once measurement per second resolution. It also contains data of electricity usage at the circuit level with resolution of one measurement per a few seconds. The smart* dataset has ambient information and some ground truth data such as on/off events and opening/closing of the doors, as well. 
+The UMass smart* Microgrid dataset contains whole building electricity usage of 443 anonymous homes in minute level and during 24 hours period of time. 
+The repository of Smart* dataset also provides software tools that have been used in the project to collect the data.
+ </p>
+ <p> <h1>Dataset structure </h1>  </p>
+ <p>The UMass smart* data set includes several compressed .tar files for each home. And each one of them contains several csv-Excel files for every day and a Format file describing the attributes name.  </p>
+  
+  <p> <h1>Attributes</h1> </p>
+  <p> Timestamp (Unix) </p>
+  <p> Apparent Power (VA)	</p>
+  <p>Real Power (Watts)</p>
+<p>Max Real Power (Watts)	</p>
+<p>Inside Temperature and outside Temperature</p>
+<p>Wind Speed, wind Direction, wind Gust and wind Gust Direction	</p>
+<p>rain, rain Rate, windChill and heat index	</p>
+<p>Inside Humidity and outside Humidity</p>
+<p>Dim Proportion	</p>
+<p>Door open/close	</p>
+<p>Furnace on/off	</p>
+<p>motion/no motion  ( from motion sensors) </p>
+<p> <h1>Paper and citation</h1> </p>
+<p> S. Barker, A. Mishra, D. Irwin, E. Cecchet, P. Shenoy, and J. Albrecht, "Smart*: An open data set and tools for enabling research in sustainable homes," SustKDD, August, pp. 1-6, 2012. </p>
+
+</body>
