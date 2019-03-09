@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Realtime Sentiment Analysis using Apache Ni-Fi, R and Shiny web app &middot; Salekin Mushfik</title>
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/poole-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-overrides.css">
+  <link rel="stylesheet" href="/css/hyde-x.css">
+  <link rel="stylesheet" href="/css/highlight/monokai.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link href="/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Random things on data science and machine learning by Salekin Mushfik">
+  <meta name="keywords" content="Salekin,Data Scientist in Melbourne,Machine learning,Data Engineer in Melbourne, Australia">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+      <h1>Salekin Mushfik</h1>
+      <p class="lead">Thoughts, Analysis and Code Snippets.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Blog</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/smsalaken"><i class="fa fa-github-square fa-3x"></i></a>
+      
+      
+      <a href="http://linkedin.com/in/salaken"><i class="fa fa-linkedin-square fa-3x"></i></a>
+      
+      
+      
+      
+      <a href="/index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-3x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <p>Copyright &copy; 2018 <a href="/license/">License</a><br/>
+       Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X</a></p>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Realtime Sentiment Analysis using Apache Ni-Fi, R and Shiny web app</h1>
+    <span class="post-date">Feb 14, 2018 &middot; 2 minute read &middot; <a href="/blog/2018/02/14/realtime-sentiment-analysis-using-apache-ni-fi-r-and-shiny-web-app/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="/categories/visualization">visualization</a>
+    </span>
+    <p>Imagine doing a sentiment analysis on an ongoing event based on realtime Twitter feed. Twitter will give you a lot of tweets, and you can use R, Python or any other language to collect them. But what happens if you want to do that for a really long time with running a R/Python function in the background i.e. how do you handle streaming? The open source world has provided us with a couple of alternatives which can handle terabytes of streaming data. Apache Ni-Fi is one of them.</p>
+<p>This is my first take at using Ni-Fi to run some sentiment analysis on realtime twitter feed. The workflow is amazingly simple. Set up a dataflow using Ni-Fi, collect the tweets in a json file within a directory, run R to perform a simple sentiment analysis and then create a shiny (R) dashboard to show the sentiment.</p>
+<p>I started with the aim to do the anlysis on a particular Twitter profile, Donald Trump being the profile of my attention. I rightly assumed (which was later proved by sentiment analysis, of course) he will be posting a lot of hateful and negative sentiment, but I lost my intereset on his tweets very quickly. I guess negative emotions (or his perspective on things) are not too attractive for me. However, in the course, I figured out a way to retrieve full tweets from a particular person from a lot of retweets.</p>
+<p>Next I focused on two different topics, sports and politics, and wanted to see how people express their emotions on these subjects. I filtered tweets for these two topics using seperate Ni-Fi dataflow and keep the process running while I started my shiny dashboard. You can see a screenshot of the dashboard below.</p>
+<p><img src="/post/shiny_dash_sent_nifi.png" width="100%" /></p>
+<div id="sentiment-on-politics" class="section level2">
+<h2>Sentiment on Politics:</h2>
+<div class="figure">
+<img src="/post/politics_sentiment.gif" />
+
+</div>
+</div>
+<div id="sentiment-on-sports" class="section level2">
+<h2>Sentiment on Sports:</h2>
+<p>Notice the balls on negatove sentiments are spreading less!! <img src="/post/sport_sentiment.gif" /></p>
+</div>
+<div id="ni-fi-dataflow-graph" class="section level2">
+<h2>Ni-Fi dataflow graph:</h2>
+<p>The dataflow can be set-up as shown below: <img src="/post/nifi_flow_sent.png" width="100%" /></p>
+</div>
+<div id="source-code" class="section level2">
+<h2>Source code:</h2>
+<p>If you want to play with the data or code, go to this github repo: <a href="https://github.com/smsalaken/sentiment_analysis_NiFi_R" class="uri">https://github.com/smsalaken/sentiment_analysis_NiFi_R</a></p>
+<p>Ni-Fi flow to find tweets from a particular profile can be found in <code>'Ni-Fi templates/twitter_people_onPeople.xml'</code></p>
+</div>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "smsalaken";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "smsalaken";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
