@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<html lang="en-US">
+
+<body>
+
+<p><h1>Dataset name: UK Domestic Appliance-Level Electricity (UK-DALE)</h1></p>
+<style>  
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+table {
+    border-spacing: 15px;
+}
+</style>
+<table style="width:100%">
+<tr> <td>Data characteristics</td>  <td>Multivariate time series</td>  <td>Type of building(s)</td>  <td>Residential</td> <td>Date</td> <td>2013</td> </tr>
+<tr> <td>Type of attributes</td>  <td>Real and Integer numbers, string</td>  <td>Number of buildings</td>  <td>4</td> <td>duration</td> <td>Several months</td> </tr>
+<tr> <td> Level of detail</td>  <td>Appliance level, whole building</td>  <td>Location of buildings</td>  <td>London,UK</td> <td>Sample frequency</td> <td>kHz</td> </tr>
+
+
+</table>
+<p><h2>Access to the dataset </h2></p>
+<p> The dataset is freely accessible from:</p>
+<p>  <a href="http://www.doc.ic.ac.uk/~dk3810/data/">http://www.doc.ic.ac.uk/~dk3810/data/ </a>    </p>
+  <p>  Data set description </p>
+  <p> This dataset contains high frequency data of electricity consumption.  A well Detailed paper on the data properties and used equipment and hardware for capturing them is provided in the paper published by data providers, (below paper).
+  </p>
+  <p><h2>Dataset structure</h2></p>
+  
+  <p> The UKDALE dataset has two compressed file formats, which are .zip and .tgz. Due to the large amount of data, they are provided for being download in two subsets of high frequency (16 KHz) one week data and lower frequency (1 KHz) one month data of one house. they are 32 GB and 11GB  respectively. Each of them contains several flac file which are named by the time stamp of the starting recording time. there is a calibration.cfg file which contains required parameters to convert measurements from [-1 1] to their real amounts. The full data is also provided for download via FTP.  </p>
+  
+  <p> <h2>Attributes</h2></p>
+<p>Timestamp </p>
+<p>Apparent power(VA) </p>
+<p>Real Power (W) </p>
+<p>Switch events<p>
+
+<p><h2>Paper and citation</h2></p>
+<p> Jack Kelly and William Knottenbelt 2014. UK-DALE: A dataset recording UK Domestic Appliance-Level Electricity demand and whole-house demand. ArXiv e-prints, arXiv:1404.0284 </p>
+
+</body>
